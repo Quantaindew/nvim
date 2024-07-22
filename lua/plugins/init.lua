@@ -22,7 +22,7 @@ return {
         --    "rustfmt",
         "zls", -- Zig Language Server, which includes zigfmt
         "typescript-language-server",
-        "pylsp",
+        "python-language-server",
         "black", -- Python language server and formatter
       },
     },
