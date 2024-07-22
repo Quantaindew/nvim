@@ -4,8 +4,8 @@ local conform = require "conform"
 
 local options = {
   formatters_by_ft = {
-    lua = { "stylua" },
-    rust = { "rustfmt" },
+    --    lua = { "stylua" },
+    --    rust = { "rustfmt" },
     zig = { "zigfmt" },
     javascript = { "prettier" },
     typescript = { "prettier" },

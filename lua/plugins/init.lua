@@ -13,13 +13,13 @@ return {
     lazy = false,
     opts = {
       ensure_installed = {
-        "lua-language-server",
-        "stylua",
+        --    "lua-language-server",
+        --    "stylua",
         "html-lsp",
         "css-lsp",
         "prettier",
-        "rust-analyzer",
-        "rustfmt",
+        --    "rust-analyzer",
+        --    "rustfmt",
         "zls", -- Zig Language Server, which includes zigfmt
         "typescript-language-server",
         "pyright",
