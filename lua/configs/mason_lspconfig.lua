@@ -25,6 +25,8 @@ M.setup = function()
       end
     end,
   }
+  -- Explicitly disable lua_ls
+  require("lspconfig").lua_ls.setup = function() end
 end
 
 return M

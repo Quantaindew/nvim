@@ -26,3 +26,6 @@ lspconfig.tsserver.setup {
   on_init = on_init,
   capabilities = capabilities,
 }
+
+-- Explicitly disable lua_ls
+lspconfig.lua_ls.setup = function() end
