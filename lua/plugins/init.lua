@@ -48,7 +48,7 @@ return {
     opts = {
       ensure_installed = {
         "vim",
-  --      "lua",
+        --      "lua",
         "vimdoc",
         "html",
         "css",
@@ -56,14 +56,14 @@ return {
     },
   },
 
-  {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
-  },
+  --  {
+  --    "Exafunction/codeium.vim",
+  --    event = "BufEnter",
+  --  },
 
   {
     "okuuva/auto-save.nvim",
-    cmd = "ASToggle", -- optional for lazy loading on command
+    cmd = "ASToggle",                         -- optional for lazy loading on command
     event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
     config = function()
       require("configs.auto_save").setup()
