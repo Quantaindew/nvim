@@ -26,10 +26,6 @@ local config = {
     "prettier",
     "black",
     ---"rustfmt",
-
-
-
-
   },
 
   max_concurrent_installers = 10,

@@ -8,7 +8,7 @@ return {
   },
 
   --  These are some examples, uncomment them if you want to see them work!
-   {
+  {
     "williamboman/mason.nvim",
     lazy = false,
     opts = function()
@@ -31,7 +31,7 @@ return {
     end,
   },
 
-   {
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
       return require "configs.treesitter"
@@ -45,7 +45,7 @@ return {
 
   {
     "okuuva/auto-save.nvim",
-    cmd = "ASToggle",                         -- optional for lazy loading on command
+    cmd = "ASToggle", -- optional for lazy loading on command
     event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
     config = function()
       require("configs.auto_save").setup()
