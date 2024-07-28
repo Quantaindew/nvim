@@ -11,21 +11,9 @@ return {
   {
     "williamboman/mason.nvim",
     lazy = false,
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "html-lsp",
-        "css-lsp",
-        "prettier",
-        "rust-analyzer",
-        "rustfmt",
-        "zls", -- Zig Language Server, which includes zigfmt
-        "typescript-language-server",
-        "pyright",
-        "black", -- Python language server and formatter
-      },
-    },
+    opts = function()
+      return require "configs.mason"
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -45,15 +33,9 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
-        "css",
-      },
-    },
+    opts = function()
+      return require "configs.treesitter"
+    end,
   },
 
   {
