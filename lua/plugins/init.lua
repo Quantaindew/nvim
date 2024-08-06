@@ -39,6 +39,14 @@ return {
   },
 
   {
+    "nvim-tree/nvim-tree.lua",
+    lazy = false,
+    config = function()
+      require("configs.nvim_tree").config()
+    end,
+  },
+
+  {
     "okuuva/auto-save.nvim",
     cmd = "ASToggle", -- optional for lazy loading on command
     event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
