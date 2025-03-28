@@ -44,3 +44,23 @@ vim.api.nvim_create_autocmd("LspAttach", {
     print("LSP started:", client.name)
   end,
 })
+--
+-- -- Set bufhidden to "wipe" for terminal buffers
+-- vim.api.nvim_create_autocmd("TermOpen", {
+--   callback = function()
+--     vim.opt_local.bufhidden = "wipe"
+--   end,
+-- })
+--
+-- -- Terminate the terminal job when the buffer is deleted
+-- vim.api.nvim_create_autocmd("BufDelete", {
+--   pattern = "term://*",
+--   callback = function()
+--     local bufnr = vim.api.nvim_get_current_buf()
+--     local chan = vim.api.nvim_buf_get_var(bufnr, "terminal_job_id")
+--     if chan then
+--       -- Send SIGTERM to the job
+--       vim.fn.jobstop(chan)
+--     end
+--   end,
+-- })

@@ -12,9 +12,25 @@ local options = {
     python = { "black" },
     css = { "prettier" },
     html = { "prettier" },
-
+    teal = { "tlint" },
     -- Add other formatters as needed
   },
+
+  lang_to_ext = {
+    bash = "sh",
+    c_sharp = "cs",
+    elixir = "exs",
+    javascript = "js",
+    julia = "jl",
+    latex = "tex",
+    markdown = "md",
+    python = "py",
+    ruby = "rb",
+    rust = "rs",
+    teal = "tl",
+    typescript = "ts",
+  },
+
   format_on_save = {
     timeout_ms = 500,
     lsp_fallback = true,
