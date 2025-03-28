@@ -28,7 +28,7 @@ return {
     config = function()
       --      require("nvchad.configs.lspconfig").defaults()
       --      require "configs.lspconfig"
-      require("lspconfig").teal_ls.setup {}
+      -- require("lspconfig").teal_ls.setup {}
     end,
   },
 
