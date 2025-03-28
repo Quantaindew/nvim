@@ -103,43 +103,63 @@ vim.api.nvim_create_autocmd("LspAttach", {
     print("LSP started:", client.name)
   end,
 })
+--
+-- -- Set bufhidden to "wipe" for terminal buffers
+-- vim.api.nvim_create_autocmd("TermOpen", {
+--   callback = function()
+--     vim.opt_local.bufhidden = "wipe"
+--   end,
+-- })
+--
+-- -- Terminate the terminal job when the buffer is deleted
+-- vim.api.nvim_create_autocmd("BufDelete", {
+--   pattern = "term://*",
+--   callback = function()
+--     local bufnr = vim.api.nvim_get_current_buf()
+--     local chan = vim.api.nvim_buf_get_var(bufnr, "terminal_job_id")
+--     if chan then
+--       -- Send SIGTERM to the job
+--       vim.fn.jobstop(chan)
+--     end
+--   end,
+-- })
 
 ```
 
 ## File: lazy-lock.json
 ```
 {
-  "CopilotChat.nvim": { "branch": "canary", "commit": "9333944fde3c65868818e245c73aa29eef826e9b" },
-  "LuaSnip": { "branch": "master", "commit": "e808bee352d1a6fcf902ca1a71cee76e60e24071" },
-  "NvChad": { "branch": "v2.5", "commit": "a69f893e49ee36d4c74431044b40f08042c396a2" },
-  "auto-save.nvim": { "branch": "main", "commit": "5fe9ab0c42f0457f2a973e814a6352b8eeb04730" },
-  "base46": { "branch": "v2.5", "commit": "177af7c0e492f6332bf78675a47b8983b1a32291" },
+  "CopilotChat.nvim": { "branch": "canary", "commit": "451d365928a994cda3505a84905303f790e28df8" },
+  "LuaSnip": { "branch": "master", "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817" },
+  "NvChad": { "branch": "v2.5", "commit": "6f25b2739684389ca69ea8229386c098c566c408" },
+  "auto-save.nvim": { "branch": "main", "commit": "29f793a3a7f98129387590269ffe3ad61ab5e509" },
+  "base46": { "branch": "v2.5", "commit": "fde7a2cd54599e148d376f82980407c2d24b0fa2" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
-  "cmp-nvim-lsp": { "branch": "main", "commit": "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
+  "cmp-nvim-lsp": { "branch": "main", "commit": "99290b3ec1322070bcfb9e846450a46f6efa50f0" },
   "cmp-nvim-lua": { "branch": "main", "commit": "f12408bdb54c39c23e67cab726264c10db33ada8" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
-  "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
-  "conform.nvim": { "branch": "master", "commit": "40d4e98fcc3e6f485f0e8924c63734bc7e305967" },
-  "copilot.lua": { "branch": "master", "commit": "1a237cf50372830a61d92b0adf00d3b23882e0e1" },
-  "friendly-snippets": { "branch": "main", "commit": "de8fce94985873666bd9712ea3e49ee17aadb1ed" },
-  "gitsigns.nvim": { "branch": "main", "commit": "863903631e676b33e8be2acb17512fdc1b80b4fb" },
-  "indent-blankline.nvim": { "branch": "master", "commit": "e7a4442e055ec953311e77791546238d1eaae507" },
-  "lazy.nvim": { "branch": "main", "commit": "1159bdccd8910a0fd0914b24d6c3d186689023d9" },
-  "mason-lspconfig.nvim": { "branch": "main", "commit": "25c11854aa25558ee6c03432edfa0df0217324be" },
-  "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
-  "menu": { "branch": "main", "commit": "ea606f6ab2430db0aece8075e62c14132b815ae1" },
-  "minty": { "branch": "main", "commit": "8809b2c7c2edbeb3fa9c3b05bd2e89934d54f526" },
-  "nvim-autopairs": { "branch": "master", "commit": "ee297f215e95a60b01fde33275cc3c820eddeebe" },
-  "nvim-cmp": { "branch": "main", "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30" },
-  "nvim-lspconfig": { "branch": "master", "commit": "04680101ff79e99b4e33a4386ec27cbd0d360c75" },
-  "nvim-tree.lua": { "branch": "master", "commit": "50e919426a4a2053f78b2f8ab001c8ad8eb47ef6" },
-  "nvim-treesitter": { "branch": "master", "commit": "86c10df7ef77daf45a0e4a918934bb59083db1e1" },
-  "nvim-web-devicons": { "branch": "master", "commit": "56f17def81478e406e3a8ec4aa727558e79786f3" },
-  "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
-  "telescope.nvim": { "branch": "master", "commit": "dc6fc321a5ba076697cca89c9d7ea43153276d81" },
-  "ui": { "branch": "v3.0", "commit": "63bb4e0b62027dac87542453ced15d5e7b524d8a" },
-  "volt": { "branch": "main", "commit": "43f72b49037c191eb3cfe26ba7a5574b4bfce226" },
-  "which-key.nvim": { "branch": "main", "commit": "8badb359f7ab8711e2575ef75dfe6fbbd87e4821" }
+  "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
+  "conform.nvim": { "branch": "master", "commit": "f9ef25a7ef00267b7d13bfc00b0dea22d78702d5" },
+  "copilot.lua": { "branch": "master", "commit": "20723713aa5fbfd535fcf0cd28753a899ca3d526" },
+  "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
+  "gitsigns.nvim": { "branch": "main", "commit": "7010000889bfb6c26065e0b0f7f1e6aa9163edd9" },
+  "indent-blankline.nvim": { "branch": "master", "commit": "005b56001b2cb30bfa61b7986bc50657816ba4ba" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "mason-lspconfig.nvim": { "branch": "main", "commit": "1a31f824b9cd5bc6f342fc29e9a53b60d74af245" },
+  "mason.nvim": { "branch": "main", "commit": "fc98833b6da5de5a9c5b1446ac541577059555be" },
+  "menu": { "branch": "main", "commit": "7769b17c2a131108c02b10e9f844e504aa605cc2" },
+  "minty": { "branch": "main", "commit": "aafc9e8e0afe6bf57580858a2849578d8d8db9e0" },
+  "nvim-autopairs": { "branch": "master", "commit": "6522027785b305269fa17088395dfc0f456cedd2" },
+  "nvim-cmp": { "branch": "main", "commit": "1e1900b0769324a9675ef85b38f99cca29e203b3" },
+  "nvim-lspconfig": { "branch": "master", "commit": "85e0dd26b710e834a105d679200d01e326a3d2b0" },
+  "nvim-tree.lua": { "branch": "master", "commit": "44d9b58f11d5a426c297aafd0be1c9d45617a849" },
+  "nvim-treesitter": { "branch": "master", "commit": "a3315b8c7f0f1ddaa30b24bcc0af0d31024dfb6a" },
+  "nvim-web-devicons": { "branch": "master", "commit": "4c3a5848ee0b09ecdea73adcd2a689190aeb728c" },
+  "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
+  "telescope.nvim": { "branch": "master", "commit": "a4ed82509cecc56df1c7138920a1aeaf246c0ac5" },
+  "ui": { "branch": "v3.0", "commit": "75233833d84b930bc37fecdcd7eb73b5714e92e4" },
+  "volt": { "branch": "main", "commit": "21a2351697abfed26d4469b88d3ab124d55a1b3f" },
+  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
 }
 
 ```
@@ -173,13 +193,10 @@ local M = {}
 
 M.setup = function()
   require("auto-save").setup {
-    execution_message = {
-      enabled = false, -- disable the execution message
-    },
     trigger_events = { -- See :h events
       immediate_save = { "BufLeave", "FocusLost" }, -- vim events that trigger an immediate save
       defer_save = { "InsertLeave", "TextChanged" }, -- vim events that trigger a deferred save (saves after `debounce_delay`)
-      cancel_defered_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
+      cancel_deferred_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
     },
     debounce_delay = 1500, -- delay after which a pending save is executed
     callbacks = {
@@ -211,6 +228,7 @@ local options = {
     python = { "black" },
     css = { "prettier" },
     html = { "prettier" },
+    teal = { "tlint" },
     -- Add other formatters as needed
   },
 
@@ -597,8 +615,25 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+map("n", "<C-a>", "ggVG", { desc = "Select all text" })
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+-- map("n", "<leader>h", ":split | terminal<CR>", { desc = "Open horizontal terminal" })
+-- map("n", "<leader>v", ":vsplit | terminal<CR>", { desc = "Open vertical terminal" })
+--
+
+local function close_buffer()
+  local bufnr = vim.api.nvim_get_current_buf() -- Get the current buffer number
+  if vim.bo[bufnr].buftype == "terminal" then -- Check if it’s a terminal buffer
+    local chan = vim.api.nvim_buf_get_var(bufnr, "terminal_job_id") -- Get the job ID
+    if chan then
+      vim.fn.jobstop(chan) -- Stop the terminal job
+    end
+  end
+  vim.cmd "bdelete!" -- Delete the buffer
+end
+
+-- Map this function to a key of your choice (e.g., <leader>x)
+map("n", "<leader>x", close_buffer, { desc = "Close buffer" })
 
 ```
 
@@ -645,7 +680,7 @@ return {
     config = function()
       --      require("nvchad.configs.lspconfig").defaults()
       --      require "configs.lspconfig"
-      require("lspconfig").teal_ls.setup {}
+      -- require("lspconfig").teal_ls.setup {}
     end,
   },
 
