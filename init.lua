@@ -41,9 +41,12 @@ end)
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
-    print("LSP started:", client.name)
+    if client then
+      vim.notify("LSP started: " .. client.name, vim.log.levels.INFO)
+    end
   end,
 })
+
 --
 -- -- Set bufhidden to "wipe" for terminal buffers
 -- vim.api.nvim_create_autocmd("TermOpen", {
