@@ -4,13 +4,10 @@ local M = {}
 
 M.setup = function()
   require("auto-save").setup {
-    execution_message = {
-      enabled = false, -- disable the execution message
-    },
     trigger_events = { -- See :h events
       immediate_save = { "BufLeave", "FocusLost" }, -- vim events that trigger an immediate save
       defer_save = { "InsertLeave", "TextChanged" }, -- vim events that trigger a deferred save (saves after `debounce_delay`)
-      cancel_defered_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
+      cancel_deferred_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
     },
     debounce_delay = 1500, -- delay after which a pending save is executed
     callbacks = {

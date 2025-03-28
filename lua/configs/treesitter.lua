@@ -10,6 +10,7 @@ local config = {
     "python",
     "rust",
     "zig",
+    "teal",
   },
 
   highlight = {
