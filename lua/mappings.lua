@@ -25,3 +25,20 @@ end
 
 -- Map this function to a key of your choice (e.g., <leader>x)
 map("n", "<leader>x", close_buffer, { desc = "Close buffer" })
+
+local function switch_to_terminal()
+  local terminals = {}
+  for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.bo[bufnr].buftype == "terminal" then
+      table.insert(terminals, bufnr)
+    end
+  end
+  if #terminals > 0 then
+    vim.cmd("buffer " .. terminals[1])
+  else
+    print "No terminal buffers found"
+  end
+end
+
+-- Map to <leader>tt (e.g., Space + t + t if your leader is Space)
+vim.keymap.set("n", "<leader>tt", switch_to_terminal, { desc = "Switch to terminal buffer" })
